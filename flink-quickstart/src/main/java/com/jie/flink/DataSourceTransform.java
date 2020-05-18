@@ -26,27 +26,23 @@ public class DataSourceTransform {
 //        ).print();
 
         // 2. Transform Object
-        dataStreamSource.flatMap(
-            (FlatMapFunction<String, Student>) (s, collector) -> {
-                for(String student : s.split(" ")) {
-                    int id = Integer.parseInt(student.split(":")[0]);
-                    String name = student.split(":")[1];
-                    collector.collect(new Student(id, name, name, (int) Math.round(Math.random() * 100 +1)));
-                }
+        dataStreamSource.flatMap((FlatMapFunction<String, Student>) (s, collector) -> {
+            for(String student : s.split(" ")) {
+                int id = Integer.parseInt(student.split(":")[0]);
+                String name = student.split(":")[1];
+                collector.collect(new Student(id, name, name, (int) Math.round(Math.random() * 100 +1)));
             }
-        ).returns(Student.class
-        ).filter((FilterFunction<Student>) student -> student.getId() % 2 == 0
-        ).keyBy(Student::getId
-        ).reduce( // 归并操作: 求相同ID的学生年龄平均值
-            (ReduceFunction<Student>) (student, t1) -> {
-                Student student1 = new Student();
-                student1.setId((student.getId() + t1.getId()) / 2);
-                student1.setName(student.getName() + t1.getName());
-                student1.setPassword(student.getPassword() + t1.getPassword());
-                student1.setAge((student.getAge() + t1.getAge()) / 2);
-                return student1;
-            }
-        ).print();
+        }).returns(Student.class)
+        .filter((FilterFunction<Student>) student -> student.getId() % 2 == 0)
+        .keyBy(Student::getId)
+        .reduce((ReduceFunction<Student>) (student, t1) -> { // 归并操作: 求相同ID的学生年龄平均值
+            Student student1 = new Student();
+            student1.setId((student.getId() + t1.getId()) / 2);
+            student1.setName(student.getName() + t1.getName());
+            student1.setPassword(student.getPassword() + t1.getPassword());
+            student1.setAge((student.getAge() + t1.getAge()) / 2);
+            return student1;
+         }).print();
 
         env.execute("DataStream Transform Test");
     }
