@@ -3,12 +3,11 @@ package com.jie.flink.models;
 /**
  * Desc: Student实体类
  */
-
 public class Student {
-    public int id;
-    public String name;
-    public String password;
-    public int age;
+    private int id;
+    private String name;
+    private String password;
+    private int age;
 
     public int getId() {
         return id;
