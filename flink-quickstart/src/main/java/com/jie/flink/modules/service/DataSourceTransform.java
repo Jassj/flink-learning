@@ -1,6 +1,6 @@
-package com.jie.flink;
+package com.jie.flink.modules.service;
 
-import com.jie.flink.models.Student;
+import com.jie.flink.modules.models.Student;
 import org.apache.flink.api.common.functions.*;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

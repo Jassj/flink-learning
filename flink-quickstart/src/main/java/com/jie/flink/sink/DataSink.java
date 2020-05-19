@@ -1,7 +1,7 @@
-package com.jie.flink;
+package com.jie.flink.sink;
 
-import com.jie.flink.models.Student;
-import com.jie.flink.sources.SourceFromMySQL;
+import com.jie.flink.modules.models.Student;
+import com.jie.flink.source.MySQLSourceMaker;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.sink.PrintSinkFunction;
@@ -12,7 +12,7 @@ public class DataSink {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
         // Data Source from MySQL
-        SingleOutputStreamOperator<Student> studentDataStreamSource = env.addSource(new SourceFromMySQL());
+        SingleOutputStreamOperator<Student> studentDataStreamSource = env.addSource(new MySQLSourceMaker());
 
         studentDataStreamSource.addSink(new PrintSinkFunction<>()); // 等价于studentDataStreamSource.print()
 

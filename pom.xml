@@ -35,9 +35,9 @@
             <!--
                 依赖的作用范围:
                     compile(默认值): 被依赖的项目需要参与编译、测试、运行和打包
-                    runtime: 不参与编译, 仅在测试和运行时需要(JDBC、Log4j等)
+                    runtime: 不参与编译, 仅在测试和运行时需要(JDBC、Log4j等),会被打包
                     test: 被依赖的项目仅参与测试相关的工作, 类似junit
-                    provided: 被依赖的项目不会被打包, 由其他容器提供
+                    provided: 被依赖的项目不会被打包, 期待由其他容器提供
             -->
             <scope>provided</scope>
         </dependency>

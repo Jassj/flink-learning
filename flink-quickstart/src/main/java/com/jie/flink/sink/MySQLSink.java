@@ -1,6 +1,6 @@
 package com.jie.flink.sink;
 
-import com.jie.flink.models.Student;
+import com.jie.flink.modules.models.Student;
 import com.jie.flink.utils.MySQLUtil;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
@@ -8,20 +8,17 @@ import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class SinkToMySQL extends RichSinkFunction<Student> {
+public class MySQLSink extends RichSinkFunction<Student> {
     PreparedStatement ps;
     private Connection connection;
 
     /**
-     * open() 方法中建立连接，这样不用每次 invoke 的时候都要建立连接和释放连接。
+     * open() 方法中建立连接, 这样不用每次 invoke 的时候都要建立连接和释放连接。
      */
     @Override
     public void open(Configuration parameters) throws Exception {
         super.open(parameters);
-        connection = MySQLUtil.getConnection("com.mysql.jdbc.Driver",
-                "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8",
-                "root",
-                "root123456");
+        connection = MySQLUtil.getConnection();
         String sql = "insert into Student(id, name, password, age) values(?, ?, ?, ?);";
         ps = this.connection.prepareStatement(sql);
     }
