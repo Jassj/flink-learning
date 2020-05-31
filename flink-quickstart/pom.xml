@@ -66,7 +66,14 @@
 			<version>5.1.34</version>
 		</dependency>
 
-	</dependencies>
+        <!-- flink connect es -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-elasticsearch7_${scala.binary.version}</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        
+    </dependencies>
 
     <build>
         <!-- 使用的插件列表 -->

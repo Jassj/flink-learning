@@ -1,6 +1,7 @@
-package com.jie.flink.source;
+package com.jie.flink.modules.service;
 
 import com.google.common.collect.Lists;
+import com.jie.flink.source.MySQLSourceMaker;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
