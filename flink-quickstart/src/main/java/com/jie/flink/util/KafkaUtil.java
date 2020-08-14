@@ -1,4 +1,4 @@
-package com.jie.flink.utils;
+package com.jie.flink.util;
 
 import com.alibaba.fastjson.JSON;
 import com.jie.flink.modules.models.Metric;
@@ -14,7 +14,7 @@ import java.util.Properties;
  * description: produce and consume message to kafka
  * @author yuanjie 2020/05/17 23:25
  */
-public class KafkaUtils {
+public class KafkaUtil {
 
     private static final String broker_list = "192.168.0.30:9092";
     private static final String topic = "metric";  // kafka topic, Flink 程序中需要统一

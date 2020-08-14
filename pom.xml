@@ -14,6 +14,7 @@
     <!-- 模块(子项目): 构建项目的一部分, 相对路径 -->
     <modules>
         <module>flink-quickstart</module>
+        <module>flink-transfer</module>
     </modules>
 
     <properties> <!-- 以值替代名称, 可以在整个POM中使用 -->
@@ -84,6 +85,17 @@
             </releases>
             <snapshots>
                 <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>ly</id>
+            <url>http://nexus.17usoft.com/repository/mvn-all/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>

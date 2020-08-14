@@ -1,7 +1,7 @@
 package com.jie.flink.source;
 
 import com.jie.flink.modules.models.Student;
-import com.jie.flink.utils.MySQLUtil;
+import com.jie.flink.util.MySQLUtil;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
 

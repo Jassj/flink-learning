@@ -1,4 +1,4 @@
-package com.jie.flink.utils;
+package com.jie.flink.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
