@@ -1,4 +1,4 @@
-package com.jie.flink.modules.service;
+package com.jie.flink.modules.service.basic;
 
 import com.google.common.collect.Lists;
 import com.jie.flink.source.MySQLSourceMaker;

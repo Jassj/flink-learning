@@ -1,4 +1,4 @@
-package com.jie.flink.modules.service;
+package com.jie.flink.modules.service.window;
 
 import org.apache.flink.api.common.functions.ReduceFunction;
 import org.apache.flink.api.common.typeinfo.Types;
@@ -95,7 +95,7 @@ public class WindowFunctionDemo {
 
 		applyFunction(dataStreamSource);
 
-		env.execute("DataStream Transform Test");
+		env.execute("Window Function Test");
 
 	}
 
