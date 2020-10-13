@@ -24,7 +24,7 @@
         <apache.commons.io>2.4</apache.commons.io>
         <lombok.version>1.16.10</lombok.version>
         <google.guava.version>19.0</google.guava.version>
-        <juit.version>4.12</juit.version>
+        <juit.version>4.13.1</juit.version>
     </properties>
 
     <dependencies> <!-- 常用依赖  -->
