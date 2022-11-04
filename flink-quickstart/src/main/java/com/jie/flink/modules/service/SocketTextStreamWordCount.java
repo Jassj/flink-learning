@@ -12,13 +12,15 @@ public class SocketTextStreamWordCount {
     public static void main(String[] args) throws Exception {
 
         // set up the streaming execution environment
-        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        env.disableOperatorChaining();
+        env.getCheckpointConfig().setCheckpointTimeout(10000);
 
         //获取数据
         DataStreamSource<String> stream = env.socketTextStream("localhost", 9000);
 
         //计数
-        SingleOutputStreamOperator<Tuple2<String, Integer>> dataStream  = stream.flatMap(new LineSplitter())
+        SingleOutputStreamOperator<Tuple2<String, Integer>> dataStream = stream.flatMap(new LineSplitter())
                 .keyBy(0)
                 .timeWindow(Time.seconds(15))
                 .sum(1);

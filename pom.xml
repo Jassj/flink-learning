@@ -14,8 +14,8 @@
     <!-- 模块(子项目): 构建项目的一部分, 相对路径 -->
     <modules>
         <module>flink-quickstart</module>
-        <module>flink-transfer</module>
         <module>spark-quickstart</module>
+        <module>flink-sql</module>
     </modules>
 
     <properties> <!-- 以值替代名称, 可以在整个POM中使用 -->
