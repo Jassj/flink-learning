@@ -29,7 +29,7 @@ public class WatermarkDemo {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
-        // 设置每30s生成一次水位线
+        // 设置每5s生成一次水位线
         env.getConfig().setAutoWatermarkInterval(5000);
 
         // 定义水位线策略

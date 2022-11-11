@@ -13,8 +13,8 @@
 
     <!-- 模块(子项目): 构建项目的一部分, 相对路径 -->
     <modules>
-        <module>flink-quickstart</module>
-        <module>spark-quickstart</module>
+<!--        <module>flink-quickstart</module>-->
+<!--        <module>spark-quickstart</module>-->
         <module>flink-sql</module>
     </modules>
 
