@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>dfs.nameservices</name>
+        <value>cluster</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.cluster.nn1</name>
+        <value>namenode-0.namenode.incubator.svc.cluster.local:28020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.servicerpc-address.cluster.nn1</name>
+        <value>namenode-0.namenode.incubator.svc.cluster.local:28021</value>
+    </property>
+    <property>
+        <name>dfs.namenode.http-address.cluster.nn1</name>
+        <value>namenode-0.namenode.incubator.svc.cluster.local:29870</value>
+    </property>
+    <property>
+        <name>dfs.namenode.rpc-address.cluster.nn2</name>
+        <value>namenode-1.namenode.incubator.svc.cluster.local:28020</value>
+    </property>
+    <property>
+        <name>dfs.namenode.servicerpc-address.cluster.nn2</name>
+        <value>namenode-1.namenode.incubator.svc.cluster.local:28021</value>
+    </property>
+    <property>
+        <name>dfs.namenode.http-address.cluster.nn2</name>
+        <value>namenode-1.namenode.incubator.svc.cluster.local:29870</value>
+    </property>
+    <property>
+        <name>dfs.ha.namenodes.cluster</name>
+        <value>nn1,nn2</value>
+    </property>
+    <property>
+        <name>dfs.client.failover.proxy.provider.cluster</name>
+        <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+    </property>
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>dfs.client.use.datanode.hostname</name>
+        <value>true</value>
+    </property>
+</configuration>
