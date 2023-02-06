@@ -13,7 +13,7 @@
 
     <!-- 模块(子项目): 构建项目的一部分, 相对路径 -->
     <modules>
-<!--        <module>flink-quickstart</module>-->
+        <module>flink-quickstart</module>
 <!--        <module>spark-quickstart</module>-->
         <module>flink-sql</module>
     </modules>
@@ -74,6 +74,19 @@
             <version>${juit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${google.guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.iceberg</groupId>
+            <artifactId>iceberg-flink-runtime</artifactId>
+            <version>0.12.1</version>
+        </dependency>
+
     </dependencies>
 
     <!-- 发现依赖和扩展的远程仓库列表 -->
